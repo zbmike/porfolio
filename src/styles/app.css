@@ -1,7 +1,10 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font: inherit;
 }
 
 body {
@@ -49,11 +52,34 @@ body {
 }
 
 .container {
-  
   width: 1024px;
   height: 100%;
   margin: 4em auto 0;
   background-color: #f3f3f3;
+}
+
+.tabs {
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.tabs button {
+  width: 256px;
+  background: transparent;
+  border: none;
+  padding: 0.5em;
+  color: #9fb8bd;
+  font-Weight: 400;
+  font-size: 1.25em;
+}
+
+.slider {
+  position: absolute;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  border: 2px solid green;
+  width: 256px;
 }
 
 @keyframes fadeIn {

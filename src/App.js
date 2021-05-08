@@ -1,9 +1,15 @@
+import { useRef } from "react";
 import useWindowsSize from "./hooks/useWindowsSize";
 import "./styles/app.css";
 
 function App() {
   const { width: windowWidth } = useWindowsSize();
+  const sliderRef = useRef();
   if (!windowWidth) return null;
+  const handleClick = (e) => {
+    sliderRef.current.style.left =
+      (e.target.offsetLeft + (windowWidth - 1024) / 2 - 8 )+ "px";
+  };
 
   return (
     <>
@@ -25,9 +31,19 @@ function App() {
           backgroundColor: "#1c1c1c",
         }}
       >
-        <div
-          className="container"
-        ></div>
+        <div className="container">
+          <div className="tabs">
+            <button onClick={handleClick}>Introduction</button>
+            <button onClick={handleClick}>Projects</button>
+            <button onClick={handleClick}>Skills</button>
+            <button onClick={handleClick}>Connect</button>
+          </div>
+          <div
+            className="slider"
+            ref={sliderRef}
+            style={{ left: (windowWidth - 1024) / 2 - 8 }}
+          ></div>
+        </div>
       </div>
     </>
   );
