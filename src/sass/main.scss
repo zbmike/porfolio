@@ -1,0 +1,89 @@
+$color-primary-light: #9fb8bd;
+$color-background: #1c1c1c;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#root {
+  background-color: $color-dark;
+}
+
+.animated-background {
+  background-image: url("../images/gpc_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+
+.textbox {
+  text-align: center;
+}
+
+.myname {
+  font-size: 3.25em;
+  color: $color-primary-light;
+  font-weight: 700;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+.mydesc {
+  font-size: 1.25em;
+  color: $color-primary-light;
+  font-weight: 300;
+  margin-top: 0.5em;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+.container {
+  width: 1024px;
+  height: 100%;
+  margin: 4em auto 0;
+  background-color: #f3f3f3;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-00px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .myname {
+    font-size: 2em;
+  }
+
+  .mydesc {
+    font-size: 1em;
+    margin: 0 3em;
+  }
+
+  .container {
+    margin: 1em;
+    width: calc(100% - 2em);
+  }
+}
