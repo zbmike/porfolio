@@ -1,0 +1,118 @@
+$color-primary-light: #9fb8bd;
+$color-background: #1c1c1c;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#root {
+  background-color: $color-background;
+}
+
+.animated-logo {
+  background-image: url("../images/gpc_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+
+.title__textbox {
+  text-align: center;
+}
+
+.heading-primary {
+  &--main {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    color: $color-primary-light;
+    font-size: 3.25em;
+    font-weight: 700;
+    animation-delay: 1s;
+  }
+  &--sub {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    color: $color-primary-light;
+    font-size: 1.25em;
+    font-weight: 300;
+    animation-delay: 2s;
+  }
+}
+
+.container {
+  width: 1024px;
+  height: 100%;
+  margin: 4em auto 0;
+  background-color: #f3f3f3;
+}
+
+.tabs {
+  display: flex;
+  position: sticky;
+  top: 0;
+  & button {
+    width: 256px;
+    // background: transparent;
+    border: none;
+    padding: 0.5em;
+    color: #9fb8bd;
+    font-weight: 400;
+    font-size: 1.25em;
+    border-radius: 10px 10px 0 0;
+    background-color: orange;
+  }
+}
+
+.slider {
+  position: relative;
+  left: 0;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  border: 2px solid black;
+  width: 256px;
+  border-radius: 1px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-00px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .heading-primary {
+    &--main {
+      font-size: 2em;
+    }
+
+    &--sub {
+      font-size: 1em;
+      margin: 0 3em;
+    }
+  }
+
+  .container {
+    margin: 1em;
+    width: calc(100% - 2em);
+  }
+}

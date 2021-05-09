@@ -15,7 +15,7 @@ body {
   background-color: #1c1c1c;
 }
 
-.animated-background {
+.animated-logo {
   background-image: url("../images/gpc_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@ body {
   animation-timing-function: ease;
 }
 
-.textbox {
+.title__textbox {
   text-align: center;
 }
 

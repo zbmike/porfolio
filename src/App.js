@@ -1,25 +1,26 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import useWindowsSize from "./hooks/useWindowsSize";
-import "./styles/app.css";
+import "./styles/index.css";
 
 function App() {
   const { width: windowWidth } = useWindowsSize();
   const sliderRef = useRef();
+  const [activeTab, setActiveTab] = useState(0);
   if (!windowWidth) return null;
   const handleClick = (e) => {
     sliderRef.current.style.left =
-      (e.target.offsetLeft + (windowWidth - 1024) / 2 - 8 )+ "px";
+      e.target.offsetLeft+ "px";
   };
 
   return (
     <>
       <div
-        className="animated-background"
+        className="animated-logo"
         style={{ height: (windowWidth * 447) / 1920 }}
       ></div>
-      <div className="textbox">
-        <h1 className="myname">Michael He</h1>
-        <h2 className="mydesc">
+      <div className="title__textbox">
+        <h1 className="heading-primary--main">Michael He</h1>
+        <h2 className="heading-primary--sub">
           Zealous, detail-oriented Software Engineer with a Graphic Design
           background and eye for design.
         </h2>
@@ -41,7 +42,6 @@ function App() {
           <div
             className="slider"
             ref={sliderRef}
-            style={{ left: (windowWidth - 1024) / 2 - 8 }}
           ></div>
         </div>
       </div>
