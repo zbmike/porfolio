@@ -57,7 +57,7 @@ body {
   width: 1024px;
   height: 100%;
   margin: 4em auto 0;
-  background-color: #f3f3f3;
+  background-color: $color-background;
 }
 
 .tabs {
@@ -69,12 +69,18 @@ body {
     // background: transparent;
     border: none;
     padding: 0.5em;
-    color: #9fb8bd;
+    color: #f3f3f3;
     font-weight: 400;
     font-size: 1.25em;
     border-radius: 10px 10px 0 0;
-    background-color: orange;
+    background-color: #9fb8bd;
   }
+  & button:hover,
+  & .active-tab {
+    background-color: $color-background;
+    color: $color-primary-light;
+  }
+
 }
 
 .slider {
@@ -82,8 +88,9 @@ body {
   left: 0;
   transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-  border: 2px solid black;
-  width: 256px;
+  border: 1px solid $color-primary-light;
+  width: 240px;
+  margin-left: 8px;
   border-radius: 1px;
 }
 

@@ -7,7 +7,8 @@ function App() {
   const sliderRef = useRef();
   const [activeTab, setActiveTab] = useState(0);
   if (!windowWidth) return null;
-  const handleClick = (e) => {
+  const handleClick = (tab) => (e) => {
+    setActiveTab(tab);
     sliderRef.current.style.left =
       e.target.offsetLeft+ "px";
   };
@@ -34,10 +35,10 @@ function App() {
       >
         <div className="container">
           <div className="tabs">
-            <button onClick={handleClick}>Introduction</button>
-            <button onClick={handleClick}>Projects</button>
-            <button onClick={handleClick}>Skills</button>
-            <button onClick={handleClick}>Connect</button>
+            <button onClick={handleClick(0)} className={`${activeTab === 0 && 'active-tab'}`}>Introduction</button>
+            <button onClick={handleClick(1)} className={`${activeTab === 1 && 'active-tab'}`}>Projects</button>
+            <button onClick={handleClick(2)} className={`${activeTab === 2 && 'active-tab'}`}>Skills</button>
+            <button onClick={handleClick(3)} className={`${activeTab === 3 && 'active-tab'}`}>Connect</button>
           </div>
           <div
             className="slider"
