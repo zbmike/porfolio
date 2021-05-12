@@ -57,7 +57,7 @@ body {
 
 .tabs {
   display: flex;
-  position: sticky;
+  position: relative;
   top: 0;
 }
 .tabs button {
@@ -67,12 +67,19 @@ body {
   color: #f3f3f3;
   font-weight: 400;
   font-size: 1.25em;
-  border-radius: 10px 10px 0 0;
-  background-color: #9fb8bd;
-}
-.tabs button:hover, .tabs .active-tab {
   background-color: #1c1c1c;
-  color: #9fb8bd;
+  transition: all 0.3s;
+}
+.tabs button:hover {
+  transform: scaleY(1.1) scaleX(1.05) translateY(-2px);
+  background-color: #333333;
+}
+.tabs .active-tab {
+  background-color: #1c1c1c;
+  color: #5AACBC;
+}
+.tabs .active-tab:hover {
+  background-color: #1c1c1c;
 }
 
 .slider {
@@ -80,10 +87,21 @@ body {
   left: 0;
   transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-  border: 1px solid #9fb8bd;
+  border: 1px solid #5AACBC;
   width: 240px;
   margin-left: 8px;
   border-radius: 1px;
+}
+
+.card {
+  perspective: 150em;
+  -moz-perspective: 150em;
+  background-color: #1c1c1c;
+  height: 50em;
+  transition: all 0.5s;
+}
+.card:hover {
+  transform: rotateY(180deg);
 }
 
 @keyframes fadeIn {

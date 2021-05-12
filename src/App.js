@@ -20,9 +20,9 @@ function App() {
         style={{ height: (windowWidth * 447) / 1920 }}
       ></div>
       <div className="title__textbox">
-        <h1 className="heading-primary--main">Michael He</h1>
+        <h1 className="heading-primary--main"><span>I'm </span>Michael He</h1>
         <h2 className="heading-primary--sub">
-          Zealous, detail-oriented Software Engineer with a Graphic Design
+          A zealous, detail-oriented Software Engineer with a Graphic Design
           background and eye for design.
         </h2>
       </div>
@@ -44,6 +44,11 @@ function App() {
             className="slider"
             ref={sliderRef}
           ></div>
+          <div>
+            <div className="card">
+              TEXT
+            </div>
+          </div>
         </div>
       </div>
     </>

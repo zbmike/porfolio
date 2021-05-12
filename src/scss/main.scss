@@ -62,7 +62,7 @@ body {
 
 .tabs {
   display: flex;
-  position: sticky;
+  position: relative;
   top: 0;
   & button {
     width: 256px;
@@ -72,15 +72,22 @@ body {
     color: #f3f3f3;
     font-weight: 400;
     font-size: 1.25em;
-    border-radius: 10px 10px 0 0;
-    background-color: #9fb8bd;
-  }
-  & button:hover,
-  & .active-tab {
     background-color: $color-background;
-    color: $color-primary-light;
+    transition: all 0.3s;
+  }
+  & button:hover {
+    transform: scaleY(1.1) scaleX(1.05) translateY(-2px);
+    background-color: #333333;
   }
 
+  & .active-tab {
+    background-color: $color-background;
+    color: #5AACBC;
+
+    &:hover {
+      background-color: $color-background;
+    }
+  }
 }
 
 .slider {
@@ -88,10 +95,22 @@ body {
   left: 0;
   transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-  border: 1px solid $color-primary-light;
+  border: 1px solid #5AACBC;
   width: 240px;
   margin-left: 8px;
   border-radius: 1px;
+}
+
+.card {
+  perspective: 150em;
+  -moz-perspective: 150em;
+  background-color: $color-background;
+  height: 50em;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
 }
 
 @keyframes fadeIn {
