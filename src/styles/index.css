@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -33,7 +37,7 @@ body {
   animation-timing-function: ease;
   animation-fill-mode: backwards;
   color: #9fb8bd;
-  font-size: 3.25em;
+  font-size: 3.25rem;
   font-weight: 700;
   animation-delay: 1s;
 }
@@ -43,7 +47,7 @@ body {
   animation-timing-function: ease;
   animation-fill-mode: backwards;
   color: #9fb8bd;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 300;
   animation-delay: 2s;
 }
@@ -51,7 +55,7 @@ body {
 .container {
   width: 1024px;
   height: 100%;
-  margin: 4em auto 0;
+  margin: 4rem auto 0;
   background-color: #1c1c1c;
 }
 
@@ -63,10 +67,10 @@ body {
 .tabs button {
   width: 256px;
   border: none;
-  padding: 0.5em;
+  padding: 0.5rem;
   color: #f3f3f3;
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   background-color: #1c1c1c;
   transition: all 0.3s;
 }
@@ -76,7 +80,7 @@ body {
 }
 .tabs .active-tab {
   background-color: #1c1c1c;
-  color: #5AACBC;
+  color: #5aacbc;
 }
 .tabs .active-tab:hover {
   background-color: #1c1c1c;
@@ -87,21 +91,52 @@ body {
   left: 0;
   transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-  border: 1px solid #5AACBC;
+  border: 1px solid #5aacbc;
   width: 240px;
   margin-left: 8px;
   border-radius: 1px;
 }
 
 .card {
-  perspective: 150em;
-  -moz-perspective: 150em;
-  background-color: #1c1c1c;
-  height: 50em;
-  transition: all 0.5s;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
 }
-.card:hover {
+.card__side {
+  background-color: orange;
+  height: 50rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.card__side--front {
+  background-color: orange;
+}
+.card__side--back {
+  background-color: red;
   transform: rotateY(180deg);
+}
+.card:hover .card__side--front {
+  transform: rotateY(180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(360deg);
+}
+.card__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.card__picture--1 {
+  background-image: url(../images/32em.jpg);
 }
 
 @keyframes fadeIn {
@@ -116,16 +151,16 @@ body {
 }
 @media screen and (max-width: 550px) {
   .heading-primary--main {
-    font-size: 2em;
+    font-size: 2rem;
   }
   .heading-primary--sub {
-    font-size: 1em;
-    margin: 0 3em;
+    font-size: 1rem;
+    margin: 0 3rem;
   }
 
   .container {
-    margin: 1em;
-    width: calc(100% - 2em);
+    margin: 1rem;
+    width: calc(100% - 2rem);
   }
 }
 

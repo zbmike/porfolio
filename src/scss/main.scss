@@ -9,6 +9,11 @@ $color-background: #1c1c1c;
   box-sizing: border-box;
 }
 
+html {
+  // This defines what 1rem is
+  font-size: 100%;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -37,7 +42,7 @@ body {
     animation-timing-function: ease;
     animation-fill-mode: backwards;
     color: $color-primary-light;
-    font-size: 3.25em;
+    font-size: 3.25rem;
     font-weight: 700;
     animation-delay: 1s;
   }
@@ -47,7 +52,7 @@ body {
     animation-timing-function: ease;
     animation-fill-mode: backwards;
     color: $color-primary-light;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: 300;
     animation-delay: 2s;
   }
@@ -56,7 +61,7 @@ body {
 .container {
   width: 1024px;
   height: 100%;
-  margin: 4em auto 0;
+  margin: 4rem auto 0;
   background-color: $color-background;
 }
 
@@ -68,10 +73,10 @@ body {
     width: 256px;
     // background: transparent;
     border: none;
-    padding: 0.5em;
+    padding: 0.5rem;
     color: #f3f3f3;
     font-weight: 400;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     background-color: $color-background;
     transition: all 0.3s;
   }
@@ -82,7 +87,7 @@ body {
 
   & .active-tab {
     background-color: $color-background;
-    color: #5AACBC;
+    color: #5aacbc;
 
     &:hover {
       background-color: $color-background;
@@ -95,21 +100,56 @@ body {
   left: 0;
   transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-  border: 1px solid #5AACBC;
+  border: 1px solid #5aacbc;
   width: 240px;
   margin-left: 8px;
   border-radius: 1px;
 }
 
 .card {
-  perspective: 150em;
-  -moz-perspective: 150em;
-  background-color: $color-background;
-  height: 50em;
-  transition: all 0.5s;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
 
-  &:hover {
+  &__side {
+    background-color: orange;
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+
+    &--front {
+      background-color: orange;
+    }
+
+    &--back {
+      background-color: red;
+      transform: rotateY(180deg);
+    }
+  }
+  &:hover &__side--front {
     transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(360deg);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &--1 {
+      background-image: url(../images/32em.jpg);
+    }
   }
 }
 
@@ -128,17 +168,17 @@ body {
 @media screen and (max-width: 550px) {
   .heading-primary {
     &--main {
-      font-size: 2em;
+      font-size: 2rem;
     }
 
     &--sub {
-      font-size: 1em;
-      margin: 0 3em;
+      font-size: 1rem;
+      margin: 0 3rem;
     }
   }
 
   .container {
-    margin: 1em;
-    width: calc(100% - 2em);
+    margin: 1rem;
+    width: calc(100% - 2rem);
   }
 }
