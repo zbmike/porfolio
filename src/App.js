@@ -67,7 +67,11 @@ function App() {
               <div className="card">
                 <div className="card__side card__side--front">
                   <div class="card__picture card__picture--1">&nbsp;</div>
-                  Project 1
+                  <h4 class="card__heading">
+                    <span class="card__heading-span card__heading-span--1">
+                      32em
+                    </span>
+                  </h4>
                 </div>
                 <div className="card__side card__side--back">Tech Stack</div>
               </div>

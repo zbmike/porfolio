@@ -1,6 +1,9 @@
 $color-primary-light: #9fb8bd;
 $color-background: #1c1c1c;
 
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
 *,
 *::before,
 *::after {
@@ -113,7 +116,7 @@ body {
   height: 50rem;
 
   &__side {
-    background-color: orange;
+    background-color: white;
     height: 50rem;
     transition: all 0.8s ease;
     position: absolute;
@@ -123,7 +126,7 @@ body {
     backface-visibility: hidden;
 
     &--front {
-      background-color: orange;
+      background-color: white;
     }
 
     &--back {
@@ -138,10 +141,20 @@ body {
     transform: rotateY(360deg);
   }
 
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 22rem;
+    right: 1rem;
+  }
+
   &__picture {
     background-size: cover;
-    height: 23rem;
-    background-blend-mode: screen;
+    height: 27rem;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
@@ -149,6 +162,20 @@ body {
 
     &--1 {
       background-image: url(../images/32em.jpg);
+    }
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
     }
   }
 }
