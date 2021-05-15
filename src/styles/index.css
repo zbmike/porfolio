@@ -12,6 +12,8 @@ html {
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  line-height: 1.4;
+  color: #777;
 }
 
 #root {
@@ -101,11 +103,11 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 40rem;
 }
 .card__side {
   background-color: white;
-  height: 50rem;
+  height: 40rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -133,12 +135,12 @@ body {
   text-align: right;
   color: white;
   position: absolute;
-  top: 22rem;
+  top: 17rem;
   right: 1rem;
 }
 .card__picture {
   background-size: cover;
-  height: 27rem;
+  height: 22rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   border-top-left-radius: 3px;
@@ -154,6 +156,11 @@ body {
 }
 .card__heading-span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.card__details {
+  padding: 3rem;
+  text-align: left;
+  font-size: 1.5rem;
 }
 
 @keyframes fadeIn {

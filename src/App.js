@@ -63,7 +63,7 @@ function App() {
           </div>
           <div className="slider" ref={sliderRef}></div>
           <div style={{ display: "flex" }}>
-            <div style={{ width: 500, marginRight: 24 }}>
+            <div style={{ width: 400, margin: "30px 56px" }}>
               <div className="card">
                 <div className="card__side card__side--front">
                   <div class="card__picture card__picture--1">&nbsp;</div>
@@ -72,11 +72,17 @@ function App() {
                       32em
                     </span>
                   </h4>
+                  <div className="card__details">
+                  Pixel perfect clone of 500px, a photo sharing website. It is a fully functional photo sharing website on both PC and phones
+                  </div>
                 </div>
-                <div className="card__side card__side--back">Tech Stack</div>
+                <div className="card__side card__side--back">
+                  
+                  
+                </div>
               </div>
             </div>
-            <div style={{ width: 500 }}>
+            <div style={{ width: 400, margin: "0 56px" }}>
               <div className="card">
                 <div className="card__side">TEXT</div>
               </div>

@@ -4,6 +4,8 @@ $color-background: #1c1c1c;
 $color-secondary-light: #ffb900;
 $color-secondary-dark: #ff7730;
 
+$color-grey-dark: #777;
+
 *,
 *::before,
 *::after {
@@ -19,6 +21,9 @@ html {
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  
+  line-height: 1.4;
+  color: $color-grey-dark;
 }
 
 #root {
@@ -113,11 +118,11 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 40rem;
 
   &__side {
     background-color: white;
-    height: 50rem;
+    height: 40rem;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
@@ -148,13 +153,13 @@ body {
     text-align: right;
     color: white;
     position: absolute;
-    top: 22rem;
+    top: 17rem;
     right: 1rem;
   }
 
   &__picture {
     background-size: cover;
-    height: 27rem;
+    height: 22rem;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
@@ -177,6 +182,13 @@ body {
         rgba($color-secondary-dark, 0.85)
       );
     }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    text-align: left;
+    font-size: 1.5rem;
   }
 }
 
