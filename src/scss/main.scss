@@ -1,10 +1,15 @@
 $color-primary-light: #9fb8bd;
+$color-primary-dark: #5aacbc;
 $color-background: #1c1c1c;
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
+$color-secondary-light: #3060ff;
+$color-secondary-dark: #2241a5;
+
+$color-third-light: #fa63ed;
+$color-third-dark: #a04098;
 
 $color-grey-dark: #777;
+$color-grey-light: #eee;
 
 *,
 *::before,
@@ -21,7 +26,7 @@ html {
 
 body {
   font-family: "Nunito Sans", sans-serif;
-  
+
   line-height: 1.4;
   color: $color-grey-dark;
 }
@@ -95,7 +100,7 @@ body {
 
   & .active-tab {
     background-color: $color-background;
-    color: #5aacbc;
+    color: $color-primary-dark;
 
     &:hover {
       background-color: $color-background;
@@ -135,7 +140,11 @@ body {
     }
 
     &--back {
-      background-color: red;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
       transform: rotateY(180deg);
     }
   }
@@ -168,6 +177,9 @@ body {
     &--1 {
       background-image: url(../images/32em.jpg);
     }
+    &--2 {
+      background-image: url(../images/traintris.jpg);
+    }
   }
 
   &__heading-span {
@@ -178,9 +190,17 @@ body {
     &--1 {
       background-image: linear-gradient(
         to right bottom,
+        rgba($color-third-light, 0.85),
+        rgba($color-third-dark, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
         rgba($color-secondary-light, 0.85),
         rgba($color-secondary-dark, 0.85)
       );
+      font-size: 2rem;
     }
   }
 
@@ -189,6 +209,99 @@ body {
 
     text-align: left;
     font-size: 1.5rem;
+  }
+
+  &__back-tech {
+    padding: 2rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto 2rem;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        color: white;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
+  }
+
+  &--white {
+    background-color: white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
   }
 }
 

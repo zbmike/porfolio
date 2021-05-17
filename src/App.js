@@ -73,18 +73,86 @@ function App() {
                     </span>
                   </h4>
                   <div className="card__details">
-                  Pixel perfect clone of 500px, a photo sharing website. It is a fully functional photo sharing website on both PC and phones
+                    Pixel perfect clone of 500px, a photo sharing website. It is
+                    a fully functional photo sharing website on both PC and
+                    phones
                   </div>
                 </div>
                 <div className="card__side card__side--back">
-                  
-                  
+                  <div className="card__back-tech">
+                    <div className="card__cta">
+                      <ul>
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>Ruby on Rails</li>
+                        <li>Amazon S3</li>
+                      </ul>
+                      <a
+                        href="https://photo32em.herokuapp.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn--white"
+                      >
+                        Live
+                      </a>
+                      <br />
+                      <br />
+                      <a
+                        href="https://github.com/zbmike/32-em"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn--white"
+                      >
+                        Code
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div style={{ width: 400, margin: "0 56px" }}>
+            <div style={{ width: 400, margin: "30px 56px" }}>
               <div className="card">
-                <div className="card__side">TEXT</div>
+                <div className="card__side card__side--front">
+                  <div class="card__picture card__picture--2">&nbsp;</div>
+                  <h4 class="card__heading">
+                    <span class="card__heading-span card__heading-span--2">
+                      Traintris
+                    </span>
+                  </h4>
+                  <div className="card__details">
+                    The classic Tetris with a new 3D look and has the ability to
+                    train itself as the user plays.
+                  </div>
+                </div>
+                <div className="card__side card__side--back">
+                  <div className="card__back-tech">
+                    <div className="card__cta">
+                      <ul>
+                        <li>JavaScript</li>
+                        <li>Three.js</li>
+                        <li>Brain.js</li>
+                      </ul>
+                      <a
+                        href="https://zbmike.dev/traintris/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn--white"
+                      >
+                        Live
+                      </a>
+                      <br />
+                      <br />
+                      <a
+                        href="https://github.com/zbmike/traintris"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn--white"
+                      >
+                        Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
