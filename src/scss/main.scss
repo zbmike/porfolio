@@ -8,6 +8,12 @@ $color-secondary-dark: #2241a5;
 $color-third-light: #fa63ed;
 $color-third-dark: #a04098;
 
+$color-red-light: #f05;
+$color-red-dark: #8d002f;
+
+$color-blue-light: #005c98;
+$color-blue-dark: #003558;
+
 $color-grey-dark: #777;
 $color-grey-light: #eee;
 
@@ -180,6 +186,12 @@ body {
     &--2 {
       background-image: url(../images/traintris.jpg);
     }
+    &--3 {
+      background-image: url(../images/slowmo.jpg);
+    }
+    &--4 {
+      background-image: url(../images/instagramc.jpg);
+    }
   }
 
   &__heading-span {
@@ -201,6 +213,22 @@ body {
         rgba($color-secondary-dark, 0.85)
       );
       font-size: 2rem;
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-red-light, 0.85),
+        rgba($color-red-dark, 0.85)
+      );
+      font-size: 2rem;
+    }
+    &--4 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-blue-light, 0.85),
+        rgba($color-blue-dark, 0.85)
+      );
+      font-size: 1.4rem;
     }
   }
 
@@ -239,6 +267,42 @@ body {
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
+  }
+}
+
+.intro {
+  padding: 3rem;
+  color: $color-primary-light;
+  display:flex;
+
+  &--text h2 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  & img {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 6rem;
+    margin-right: 2rem;
+    margin-top: 6rem;
+    border-radius: 9999rem;
+    border: 2px solid $color-primary-dark;
+  }
+
+  &--text h2:after {
+    display: block;
+    content: "";
+    width: 9rem;
+    height: 2px;
+    margin: 0.7em 0 1em 0;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, $color-primary-light, $color-primary-dark, $color-secondary-dark);
+  }
+
+  &--text p {
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 }
 

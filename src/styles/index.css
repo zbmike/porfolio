@@ -152,6 +152,12 @@ body {
 .card__picture--2 {
   background-image: url(../images/traintris.jpg);
 }
+.card__picture--3 {
+  background-image: url(../images/slowmo.jpg);
+}
+.card__picture--4 {
+  background-image: url(../images/instagramc.jpg);
+}
 .card__heading-span {
   padding: 1rem 1.5rem;
   -webkit-box-decoration-break: clone;
@@ -163,6 +169,14 @@ body {
 .card__heading-span--2 {
   background-image: linear-gradient(to right bottom, rgba(48, 96, 255, 0.85), rgba(34, 65, 165, 0.85));
   font-size: 2rem;
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(255, 0, 85, 0.85), rgba(141, 0, 47, 0.85));
+  font-size: 2rem;
+}
+.card__heading-span--4 {
+  background-image: linear-gradient(to right bottom, rgba(0, 92, 152, 0.85), rgba(0, 53, 88, 0.85));
+  font-size: 1.4rem;
 }
 .card__details {
   padding: 3rem;
@@ -193,6 +207,38 @@ body {
   transform: translate(-50%, -50%);
   width: 90%;
   text-align: center;
+}
+
+.intro {
+  padding: 3rem;
+  color: #9fb8bd;
+  display: flex;
+}
+.intro--text h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.intro img {
+  width: 16rem;
+  height: 16rem;
+  margin-left: 6rem;
+  margin-right: 2rem;
+  margin-top: 6rem;
+  border-radius: 9999rem;
+  border: 2px solid #5aacbc;
+}
+.intro--text h2:after {
+  display: block;
+  content: "";
+  width: 9rem;
+  height: 2px;
+  margin: 0.7em 0 1em 0;
+  border-radius: 2px;
+  background-image: linear-gradient(90deg, #9fb8bd, #5aacbc, #2241a5);
+}
+.intro--text p {
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 
 .btn, .btn:link, .btn:visited {
