@@ -17,6 +17,12 @@ $color-blue-dark: #003558;
 $color-grey-dark: #777;
 $color-grey-light: #eee;
 
+$accent1: #e0001a;
+$accent2: #c001c4;
+$accent3: #3300be;
+$accent4: #0046d1;
+$accent5: #0090e9;
+
 *,
 *::before,
 *::after {
@@ -35,6 +41,7 @@ body {
 
   line-height: 1.4;
   color: $color-grey-dark;
+  background-color: $color-background;
 }
 
 #root {
@@ -192,6 +199,9 @@ body {
     &--4 {
       background-image: url(../images/instagramc.jpg);
     }
+    &--5 {
+      background-image: url(../images/portfolio.jpg);
+    }
   }
 
   &__heading-span {
@@ -227,6 +237,14 @@ body {
         to right bottom,
         rgba($color-blue-light, 0.85),
         rgba($color-blue-dark, 0.85)
+      );
+      font-size: 1.4rem;
+    }
+    &--5 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
       );
       font-size: 1.4rem;
     }
@@ -273,7 +291,7 @@ body {
 .intro {
   padding: 3rem;
   color: $color-primary-light;
-  display:flex;
+  display: flex;
 
   &--text h2 {
     font-size: 2rem;
@@ -297,13 +315,230 @@ body {
     height: 2px;
     margin: 0.7em 0 1em 0;
     border-radius: 2px;
-    background-image: linear-gradient(90deg, $color-primary-light, $color-primary-dark, $color-secondary-dark);
+    background-image: linear-gradient(
+      90deg,
+      $color-primary-light,
+      $color-primary-dark,
+      $color-secondary-dark
+    );
   }
 
   &--text p {
     font-size: 1.2rem;
     line-height: 2rem;
   }
+}
+
+.skill-text {
+  margin-left: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $color-primary-light;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  padding: 0.75rem;
+
+  li {
+    padding: 1.5rem 0;
+    color: white;
+    &.style1 {
+      background-color: $accent1;
+    }
+
+    &.style2 {
+      background-color: $accent2;
+    }
+
+    &.style3 {
+      background-color: $accent3;
+    }
+
+    &.style4 {
+      background-color: $accent4;
+    }
+
+    &.style5 {
+      background-color: $accent5;
+    }
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
+
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5em 5em 3em 5em;
+  width: calc(100% + 2rem);
+  margin: 0 0 3rem -2rem;
+
+  & section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: $color-primary-dark;
+  }
+
+  > * {
+    width: calc(50% - 2rem);
+    margin-left: 2rem;
+  }
+
+  .copyright {
+    width: 100%;
+    margin: 2.5rem 0 2rem 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    padding: 0 0.65em 0 0;
+
+    &:last-child {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+.icon.alt {
+  display: inline-block;
+  border: solid 1px;
+  border-radius: 100%;
+}
+
+.icon {
+  text-decoration: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-bottom: none;
+  position: relative;
+}
+
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.icon > .label {
+  display: none;
+}
+
+.icon:before {
+  line-height: solid;
+}
+
+.icon.alt:before {
+  display: block;
+  font-size: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+}
+
+.icon.brands:before {
+  font-family: "Font Awesome 5 Brands";
+}
+
+.icon.alt {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.icon.alt:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.icon.alt:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main {
+  padding: 5em 5em 3em 5em;
+}
+
+.main:first-child {
+  border-top: 0;
+}
+
+section.special {
+  text-align: center;
+}
+
+section.special header.major h2:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header.major p {
+  font-size: 1.25em;
+  letter-spacing: -0.025em;
+}
+
+header.major {
+  margin-bottom: 3em;
+  color: $color-primary-light;
+}
+
+header.major h1 {
+  font-size: 2.5em;
+}
+
+header.major h2 {
+  font-size: 2em;
+}
+
+a {
+  -moz-transition: color 0.2s ease, border-bottom 0.2s ease;
+  -webkit-transition: color 0.2s ease, border-bottom 0.2s ease;
+  -ms-transition: color 0.2s ease, border-bottom 0.2s ease;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  text-decoration: none;
+  border-bottom: dotted 1px;
+  color: inherit;
+}
+
+a:hover {
+  border-bottom-color: transparent;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .btn {
@@ -377,11 +612,11 @@ body {
 
   100% {
     opacity: 1;
-    transform: translateY(-00px);
+    transform: translateY(0);
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 480px) {
   .heading-primary {
     &--main {
       font-size: 2rem;
@@ -396,5 +631,48 @@ body {
   .container {
     margin: 1rem;
     width: calc(100% - 2rem);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #footer {
+    padding: 4em 4em 2em 4em;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #footer {
+    padding: 4em 3em 2em 3em;
+    display: block;
+    margin: 0 0 3em 0;
+    width: 100%;
+  }
+
+  #footer > * {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 3em;
+  }
+
+  #footer .copyright {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #footer {
+    padding: 3em 2em 1em 2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    padding: 3em 1.5em 1em 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    padding: 2.5em 1em 0.5em 1em;
   }
 }
